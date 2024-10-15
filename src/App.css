@@ -1,38 +1,79 @@
+body, html {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  width: 100vw;
+  height: 100vh;
+  background-color: #050510;
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  overflow: hidden;
 }
 
-.App-link {
-  color: #61dafb;
+canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 
-@keyframes App-logo-spin {
+.universe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.planet-base {
+  fill: #4a4a8f;
+}
+
+.planet-highlight {
+  fill: #6a6abf;
+}
+
+.planet-crater {
+  fill: #3a3a6f;
+}
+
+.star {
+  fill: #00ffff;
+  opacity: 0.7;
+  font-family: 'Courier New', monospace;
+}
+
+@keyframes rotate {
   from {
     transform: rotate(0deg);
   }
   to {
     transform: rotate(360deg);
   }
+}
+
+@keyframes twinkle {
+  0%, 100% {
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+.ascii-art {
+  font-family: 'Courier New', monospace;
+  font-size: 10px;
+  line-height: 10px;
+  white-space: pre;
+  color: #00ffff;
+  text-align: center;
+}
+
+.ascii-char {
+  display: inline-block;
+  transition: transform 0.1s ease-out, opacity 0.1s ease-out;
 }
